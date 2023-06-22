@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>植物大战僵尸</title>
+    <link rel="stylesheet" type="text/css" href="css/zhang.css">
+</head>
+<body>
+    <!-- <div class="btn">
+        <p>&nbsp;&nbsp;  植物大战僵尸</p>
+    </div> -->
+    <div class="top">
+        <a href="https://home.cnblogs.com/u/zxp04214" target="_blank">我的兴趣</a>
+        <a href="https://home.cnblogs.com/u/zxp04214" target="_blank">我的过去</a>
+        <a href="https://home.cnblogs.com/u/zxp04214" target="_blank">我的梦想</a>
+        <a href="https://home.cnblogs.com/u/zxp04214">zhang的博客</a>
+    </div>
+    <div class="content">
+    
+        <h1 class="avr">Plants vs. Zombies</h1>
+    </div>
+
+
+    <div class="yinyue">
+        <img class="music" src="./img/期末图片1.png" alt="">
+        <audio autoplay="autoplay" id="audio" loop="loop">
+            <source src="./Laura Shigihara - Moongrains.mp3" type="audio/MP3">
+
+        </audio>
+
+    </div>
+    <div class="row">
+        <div class="centercolumn">
+            <div class="card">
+
+                <h2 id="biaoti">经典语录</h2><br />
+                <hr />
+                <h4 id="qita">2023 年 6 月 1日</h4>
+
+                <p style="text-indent:2em">我不会防守，也不会进攻，连当个炮灰都显得那么微不足道，可是我有着承载的力量，我会为你承担一切，不管他有多么沉重。——睡莲</p>
+                <p style="text-indent:2em">舍生取义的一跳之后，留给你的，是一片寂静的天地。你会记得我蔑视敌人的眼神吗？我从来都不懂得害怕为何物。——窝瓜</p>
+                <p style="text-indent:2em">
+                    我生长在黑暗中，为你消除一个又一个隐患。我会和他们同归于尽，为你修整出宽阔的道路。——墓碑吞噬者
+					<br /><br />
+                    我拥有着绚烂的外表，但这美丽只在瞬间绽放。烟花散尽之后你会多一个朋友，但是我的身影已经消失在你的视线之外。——魅惑菇
+                </p>
+                <p style="text-indent:2em">
+                    我年龄小，个子也小，可是我已经懂得了战斗的含义，我甚至还懂得了炮灰的含义。我不怕，我也不怨你，因为我和你一样，都憧憬着胜利的一刻。——小蘑菇
+                   <br /> <br />              
+                   
+                </p>
+                <p style="text-indent:2em">
+                    也许我现在的用处不大，也许我属于被你鄙视的行列，但是给我一点机会，我也有变成神的可能。——大喷菇<br /><br />
+                </p>
+                <p style="text-indent:2em">
+                    我的出现就是为了毁灭，毁灭敌人，还有我自己。你会记住我吗？就算只有一刹那，我也觉得，自己很美丽。——樱桃
+                    <br /><br />
+                  
+				   <br />
+				   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />(植物大战僵尸经典语句)
+                </p>
+            </div>  
+        </div>
+    </div>
+
+    <script>
+    let mucics = document.getElementById('audio')
+    document.body.addEventListener('mousemove', function() {
+        setTimeout(() => {
+            mucics.play();
+        }, 2000);
+    }, false);
+    </script>
+    
+    <div class="footer">
+        <br />
+        <p>希望能成为有梦想 有温度的人</p><br />
+        <p>你好 我是zhang</p><br />
+    </div>
+    <script>
+        //鼠标点击出现爱心特效  这部分特效是从一个网页搬过来的  觉得挺好看的
+        (function (window, document, undefined) {
+            var hearts = [];
+            window.requestAnimationFrame = (function () {
+                return window.requestAnimationFrame ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function (callback) {
+				    setTimeout(callback, 1000 / 60);
+				}
+            })();
+            init();
+            function init() {
+                css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                attachEvent();
+                gameloop();
+            }
+            function gameloop() {
+                for (var i = 0; i < hearts.length; i++) {
+                    if (hearts[i].alpha <= 0) {
+                        document.body.removeChild(hearts[i].el);
+                        hearts.splice(i, 1);
+                        continue;
+                    }
+                    hearts[i].y--;
+                    hearts[i].scale += 0.004;
+                    hearts[i].alpha -= 0.013;
+                    hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+                }
+                requestAnimationFrame(gameloop);
+            }
+            function attachEvent() {
+                var old = typeof window.onclick === "function" && window.onclick;
+                window.onclick = function (event) {
+                    old && old();
+                    createHeart(event);
+                }
+            }
+            function createHeart(event) {
+                var d = document.createElement("div");
+                d.className = "heart";
+                hearts.push({
+                    el: d,
+                    x: event.clientX - 5,
+                    y: event.clientY - 5,
+                    scale: 1,
+                    alpha: 1,
+                    color: randomColor()
+                });
+                document.body.appendChild(d);
+            }
+            function css(css) {
+                var style = document.createElement("style");
+                style.type = "text/css";
+                try {
+                    style.appendChild(document.createTextNode(css));
+                } catch (ex) {
+                    style.styleSheet.cssText = css;
+                }
+                document.getElementsByTagName('head')[0].appendChild(style);
+            }
+            function randomColor() {
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+            }
+        })(window, document);
+    </script>
+</body>
+</html>
